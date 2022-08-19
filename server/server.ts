@@ -1,3 +1,9 @@
+// instantiate Express app
+// Create a route
+// use middleware for accesing data in POST req.
+// listen to a port
+// to use process.env variable inport dotenv and call config on it.
+
 import express, { Express, Request, Response } from 'express'
 import mongoose, { connect } from 'mongoose'
 import dotenv from 'dotenv'

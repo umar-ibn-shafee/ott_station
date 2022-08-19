@@ -1,3 +1,7 @@
+// Use express.Router by instaiating it
+// Then use all methods for this route
+// use rote handler functions from controler
+
 import express, {Request, Response, Router} from 'express';
 
 const router: Router = express.Router()
