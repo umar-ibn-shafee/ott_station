@@ -4,24 +4,22 @@
 // listen to a port
 // to use process.env variable inport dotenv and call config on it.
 
-import express, { Express, Request, Response } from 'express'
+import express, { Express } from 'express'
 import mongoose, { connect } from 'mongoose'
 import dotenv from 'dotenv'
 
 import MovieModel from './models/movieModel'
+import MOviesRouter from './routes/movies'
 
 dotenv.config()
+const port = process.env.PORT;
 
 const app: Express = express()
 
 app.use(express.json())
 
-const port = process.env.PORT;
-
-app.get('/', (req: Request, res: Response) => {
-    res.send("Ecpress + TS Server")
-    // res.json({Msg: "This is a GET /"})
-})
+// Using routes insted of calling methods here
+app.use('/api/movies', MOviesRouter)
 
 // mongoose.connect
 run().catch((err) => console.log('ERROR:', err))

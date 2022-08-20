@@ -3,19 +3,24 @@
 // use rote handler functions from controler
 
 import express, {Request, Response, Router} from 'express';
+import {
+    getMovies,
+    getOneMovie,
+    addMovie,
+    updateMovie,
+    deleteMOvie
+} from '../controllers/moviesController'
 
 const router: Router = express.Router()
 
-router.get('/', (req: Request, res: Response) => {
+router.get('/', getMovies)
 
-})
+router.get('/:id', getOneMovie)
 
-router.get('/:id')
+router.post('/', addMovie)
 
-router.post('/')
+router.patch('/:id', updateMovie)
 
-router.patch('/:id')
+router.delete('/:id', deleteMOvie)
 
-router.delete('/:id')
-
-module.exports = router;
+export default router;
